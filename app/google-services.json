@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "177925939278",
+    "firebase_url": "https://qwerty-ebae9.firebaseio.com",
+    "project_id": "qwerty-ebae9",
+    "storage_bucket": "qwerty-ebae9.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:177925939278:android:bfd9f7493389b6cd3a631f",
+        "android_client_info": {
+          "package_name": "com.example.photo_diary"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "177925939278-9shm32utco5ilcp7lplujvqjjr5gm3qr.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB7MIJiSkKmfbxZqJCQTn438vxdCRYPY_w"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "177925939278-9shm32utco5ilcp7lplujvqjjr5gm3qr.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

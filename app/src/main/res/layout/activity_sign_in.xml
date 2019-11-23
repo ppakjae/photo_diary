@@ -4,6 +4,167 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Auth_Activity.SignInActivity">
+    tools:context=".Auth_Activity.SignInActivity"
+    android:background="@color/authBlack">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="530dp"
+        android:background="@drawable/auth_white_background"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <TextView
+            android:id="@+id/signIn_Title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Sign in."
+            android:textAllCaps="false"
+            android:textColor="#000"
+            android:textSize="35sp"
+            app:layout_constraintBottom_toTopOf="@+id/guideline"
+            app:layout_constraintStart_toStartOf="parent"
+            android:layout_marginStart="35dp"/>
+
+        <TextView
+            android:id="@+id/signin_Email_Title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="이메일"
+            android:textAllCaps="false"
+            android:textColor="#000"
+            android:textSize="15sp"
+            app:layout_constraintBottom_toTopOf="@+id/signin_Title_Input"
+            app:layout_constraintStart_toStartOf="parent"
+            android:layout_marginStart="47dp"/>
+
+        <EditText
+            android:id="@+id/signin_Title_Input"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:hint="이메일을 입력하세요"
+            android:paddingBottom="15dp"
+            android:textColor="@color/authBlack"
+            android:textSize="15sp"
+            app:layout_constraintBottom_toTopOf="@+id/guideline5"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            android:layout_marginRight="40dp"
+            android:layout_marginLeft="40dp"/>
+
+        <TextView
+            android:id="@+id/signin_PW_Title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="40dp"
+            android:text="비밀번호"
+            android:textAllCaps="false"
+            android:textColor="#000"
+            android:textSize="15sp"
+            app:layout_constraintBottom_toTopOf="@+id/signin_PW_Input"
+            app:layout_constraintStart_toStartOf="parent"
+            android:layout_marginStart="47dp"/>
+
+        <EditText
+            android:id="@+id/signin_PW_Input"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:hint="이메일을 입력하세요"
+            android:paddingBottom="20dp"
+            android:textSize="15sp"
+            android:textColor="@color/authBlack"
+            app:layout_constraintBottom_toTopOf="@+id/guideline6"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            android:layout_marginRight="40dp"
+            android:layout_marginLeft="40dp"/>
+
+        <ImageView
+            android:layout_width="18dp"
+            android:layout_height="18dp"
+            android:src="@drawable/keep_frame"
+            app:layout_constraintEnd_toStartOf="@+id/loginRetain_text"
+            app:layout_constraintTop_toTopOf="@+id/guideline6"
+            android:layout_marginTop="5dp"
+            android:layout_marginRight="5dp"/>
+
+        <TextView
+            android:id="@+id/loginRetain_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="로그인 상태 유지"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/guideline6"
+            android:layout_marginTop="5dp"
+            android:layout_marginRight="40dp"/>
+
+        <TextView
+            android:id="@+id/signup_btn"
+            android:layout_width="130dp"
+            android:layout_height="40dp"
+            android:layout_marginStart="44dp"
+            android:background="@drawable/auth_signup_btn"
+            android:gravity="center"
+            android:text="계정 찾기"
+            android:textColor="#000"
+            app:layout_constraintBottom_toTopOf="@+id/imageView"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <TextView
+            android:id="@+id/findInfo_btn"
+            android:layout_width="130dp"
+            android:layout_height="40dp"
+            android:background="@drawable/auth_findinfo_btn"
+            app:layout_constraintBottom_toTopOf="@+id/signup_btn"
+            app:layout_constraintStart_toStartOf="parent"
+            android:text="회원가입"
+            android:gravity="center"
+            android:textColor="#fff"
+            android:layout_marginStart="47dp"
+            android:layout_marginBottom="10dp"/>
+
+        <ImageView
+            android:id="@+id/imageView"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:layout_marginRight="30dp"
+            android:layout_marginBottom="30dp"
+            android:src="@drawable/action"
+            android:textColor="#000"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideline"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_begin="112dp" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideline5"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_begin="224dp" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideline6"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_begin="325dp" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="ⓒ2019 DOUBLE SLASH all rights reserved"
+        android:textColor="#fff"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginBottom="10dp"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

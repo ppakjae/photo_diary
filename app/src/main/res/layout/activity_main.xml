@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--19.11.25 혜연 일부 작업-->
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <!--//리사이클러뷰와 하단 저작권 layout start//-->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <!--스피너-->
+            <!--Recycle-->
+            <!--하단저작권-->
+
+        </LinearLayout>
+        <!--//리사이클러뷰와 하단 저작권 layout end//-->
+
+
+        <!--//Top 과 Plus 부분 고정 start//-->
+        <!--Top Layout-->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="70dp"
+                android:orientation="vertical"
+                android:background="#fff">
+
+                <!--앱 아이콘-->
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center" />
+
+            </LinearLayout>
+            <!--구분선-->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:orientation="vertical"
+                android:background="#bbbbbb"></LinearLayout>
+        </LinearLayout>
+
+        <!--upload Button-->
+        <ImageButton
+            android:id="@+id/main_Ibtn_Upload"
+            android:layout_width="70dp"
+            android:layout_height="70dp"
+            android:layout_gravity="end|bottom"
+            android:layout_margin="25dp"
+            android:src="@drawable/upload"
+            android:background="@drawable/upload"
+            android:scaleType="fitXY"
+            android:visibility="visible"/>
+        <!--//Top과 Plus 부분 고정 end//-->
+
+
+        <!--삭제 layout invisible-->
+
+    </FrameLayout>
+</LinearLayout>

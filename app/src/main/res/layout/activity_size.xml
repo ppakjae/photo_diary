@@ -10,7 +10,13 @@
         android:layout_weight="1"
         android:background="@color/authBlack"
         android:orientation="vertical">
+
         <!--불러온 이미지 ImageView-->
+        <ImageView
+            android:id="@+id/sizeView"
+            android:layout_width="match_parent"
+            android:layout_height="400dp"
+            android:background="#ffffff"></ImageView>
 
     </LinearLayout>
     <LinearLayout

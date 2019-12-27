@@ -1,70 +1,305 @@
 <?xml version="1.0" encoding="utf-8"?>
-<!--19.11.25 혜연 일부 작업-->
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical"
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
+    <!--
+    19.12.27
+    - 리사이클러뷰 item.xml만 만들었음
+      연결해야 함..
+      - 리사이클러뷰 속성 android:layout_manager="vertical" 맞는지 확인하기
+    - plus 버튼 클릭 시 나올 layout 만들기
+    - datepicker text 색상과 년월까지 나오도록 수정(java에서 수정할 것)
+    -->
 
-    <FrameLayout
+    <!--리사이클러뷰와 하단 저작권 layout-->
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
-        <!--//리사이클러뷰와 하단 저작권 layout start//-->
+        android:layout_height="match_parent"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="70dp"
+        android:orientation="vertical">
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <!--list와 하단저작권-->
+            <RelativeLayout
+                android:id="@+id/main_layout"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginTop="40dp">
+
+                <!--Recycler list-->
+                <android.support.v7.widget.RecyclerView
+                    android:id="@+id/recycler1"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentTop="true"
+                    android:layout_manager="vertical"
+                    android:scrollbars="vertical" />
+
+                <!--noList_Text-->
+                <TextView
+                    android:id="@+id/noList_Text"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true"
+                    android:text="게시글이 존재하지 않습니다."
+                    android:textColor="#656565"
+                    android:textSize="14sp" />
+
+                <!--하단 뷰-->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="60dp"
+                    android:layout_alignParentBottom="true"
+                    android:background="#bbb"
+                    android:gravity="center_horizontal|bottom"
+                    android:orientation="horizontal"
+                    android:padding="5dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="2019"
+                        android:textColor="#fff"
+                        android:textSize="9sp" />
+
+                    <!--extraBold 찾기..-->
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text=" DOUBLE SLASH "
+                        android:textColor="#fff"
+                        android:textSize="9sp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="all rights reserved."
+                        android:textColor="#fff"
+                        android:textSize="9sp" />
+
+                </LinearLayout>
+
+            </RelativeLayout>
+
+            <!--date 결정 layout-->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:id="@+id/date_layout"
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
+                    android:background="#fff"
+                    android:gravity="center"
+                    android:orientation="horizontal">
+                    <!--year-->
+                    <TextView
+                        android:id="@+id/year_Text"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="5sp"
+                        android:text="2019"
+                        android:textColor="#000" />
+                    <!--month-->
+                    <TextView
+                        android:id="@+id/month_Text"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="5dp"
+                        android:text="10"
+                        android:textColor="#000" />
+                    <!--datepicker open button-->
+                    <ImageButton
+                        android:id="@+id/spinner_IBtn"
+                        android:layout_width="20dp"
+                        android:layout_height="20dp"
+                        android:layout_marginStart="5dp"
+                        android:layout_marginEnd="5dp"
+                        android:background="#0000"
+                        android:scaleType="fitXY"
+                        android:src="@drawable/dropdown" />
+
+                </LinearLayout>
+
+                <!--datePicker Layout-->
+                <LinearLayout
+                    android:id="@+id/date_Picker_layout"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="60dp"
+                    android:layout_marginEnd="60dp"
+                    android:background="@drawable/dropdown_box"
+                    android:orientation="vertical"
+                    android:visibility="gone">
+
+                    <!--datePicker-->
+                    <DatePicker
+                        android:id="@+id/datePicker"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_horizontal"
+                        android:calendarViewShown="false"
+                        android:datePickerMode="spinner" />
+                </LinearLayout>
+
+            </LinearLayout>
+
+        </FrameLayout>
+
+    </LinearLayout>
+
+
+    <!--Top 과 Plus 부분 고정-->
+    <!--Top Layout-->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="70dp"
+            android:background="#fff"
+            android:orientation="vertical">
+
+            <!--앱 아이콘-->
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center" />
+
+        </LinearLayout>
+        <!--구분선-->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="#bbbbbb"
+            android:orientation="vertical" />
+    </LinearLayout>
+
+    <!--upload Button-->
+    <ImageButton
+        android:id="@+id/main_Ibtn_Upload"
+        android:layout_width="70dp"
+        android:layout_height="70dp"
+        android:layout_gravity="end|bottom"
+        android:layout_margin="25dp"
+        android:background="@drawable/upload"
+        android:scaleType="fitXY"
+        android:src="@drawable/upload"
+        android:visibility="visible" />
+
+
+    <!--삭제 layout invisible-->
+    <FrameLayout
+        android:id="@+id/delete_layout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:visibility="gone">
+
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:orientation="vertical">
 
-            <!--스피너-->
-            <!--Recycle-->
-            <!--하단저작권-->
-
-        </LinearLayout>
-        <!--//리사이클러뷰와 하단 저작권 layout end//-->
-
-
-        <!--//Top 과 Plus 부분 고정 start//-->
-        <!--Top Layout-->
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="vertical">
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="70dp"
-                android:orientation="vertical"
-                android:background="#fff">
+                android:background="#00000000"
+                android:orientation="vertical" />
 
-                <!--앱 아이콘-->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_gravity="center"
+                android:background="#77000000"
+                android:orientation="vertical" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="270dp"
+            android:layout_height="180dp"
+            android:layout_gravity="center"
+            android:background="@drawable/delete_box"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="120dp"
+                android:gravity="center"
+                android:orientation="vertical">
+
                 <ImageView
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:src="@drawable/delete" />
+
+                <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_gravity="center" />
+                    android:layout_marginTop="10dp"
+                    android:text="정말 삭제하시겠습니까?"
+                    android:textColor="#656565"
+                    android:textSize="12sp" />
 
             </LinearLayout>
-            <!--구분선-->
+
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="1dp"
-                android:orientation="vertical"
-                android:background="#bbbbbb"></LinearLayout>
+                android:layout_marginStart="30dp"
+                android:layout_marginEnd="30dp"
+                android:background="#e4e4e4"
+                android:orientation="vertical" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal">
+
+                <Button
+                    android:id="@+id/cancel_Btn"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:background="#0000"
+                    android:text="취소"
+                    android:textColor="#656565"
+                    android:textSize="12sp"
+                    android:textStyle="bold" />
+
+                <LinearLayout
+                    android:layout_width="1dp"
+                    android:layout_height="match_parent"
+                    android:layout_marginTop="15dp"
+                    android:layout_marginBottom="15dp"
+                    android:background="#e4e4e4"
+                    android:orientation="horizontal" />
+
+                <Button
+                    android:id="@+id/delete_Btn"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:background="#0000"
+                    android:text="삭제"
+                    android:textColor="#ff4242"
+                    android:textSize="12sp"
+                    android:textStyle="bold" />
+
+            </LinearLayout>
+
         </LinearLayout>
 
-        <!--upload Button-->
-        <ImageButton
-            android:id="@+id/main_Ibtn_Upload"
-            android:layout_width="70dp"
-            android:layout_height="70dp"
-            android:layout_gravity="end|bottom"
-            android:layout_margin="25dp"
-            android:src="@drawable/upload"
-            android:background="@drawable/upload"
-            android:scaleType="fitXY"
-            android:visibility="visible"/>
-        <!--//Top과 Plus 부분 고정 end//-->
-
-
-        <!--삭제 layout invisible-->
-
     </FrameLayout>
-</LinearLayout>
+
+</FrameLayout>
